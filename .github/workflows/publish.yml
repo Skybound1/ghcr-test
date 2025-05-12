@@ -5,6 +5,11 @@ on: [push]
 jobs:
   publish-image:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      attestations: write
+      id-token: write
     steps:
       - uses: actions/checkout@v2
       - name: Login to GHCR
@@ -15,5 +20,5 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and push docker image
         run: |
-          docker build . -t ghcr.io/Skybound1/ghcr-test
-          docker push ghcr.io/Skybound1/ghcr-test
+          docker build . -t ghcr.io/skybound1/ghcr-test
+          docker push ghcr.io/skybound1/ghcr-test
