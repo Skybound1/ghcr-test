@@ -20,5 +20,5 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and push docker image
         run: |
-          docker build . -t ghcr.io/skybound1/ghcr-test
-          docker push ghcr.io/skybound1/ghcr-test
+          docker build . -t ghcr.io/skybound1/ghcr-test3
+          docker push ghcr.io/skybound1/ghcr-test3
